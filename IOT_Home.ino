@@ -1,20 +1,17 @@
 #include <DHT.h>
 #include <DHT_U.h>
-
-//backup
-
 #include <ESP8266WiFi.h>
 #include "Adafruit_MQTT.h"
 #include "Adafruit_MQTT_Client.h"
 
 #include <Servo.h>
 //#define DHTPIN            13
-#define WLAN_SSID       "TP-LINK"
-#define WLAN_PASS       "1qazxsw2"
+#define WLAN_SSID       "ssid"
+#define WLAN_PASS       "pass"
 #define AIO_SERVER      "io.adafruit.com"
 #define AIO_SERVERPORT  8883                  
-#define AIO_USERNAME    "mano009das"
-#define AIO_KEY         "2450f209b3044bb98064a237cea0c171"
+#define AIO_USERNAME    "username"
+#define AIO_KEY         "key"
 WiFiClientSecure client;
 Adafruit_MQTT_Client mqtt(&client, AIO_SERVER, AIO_SERVERPORT, AIO_USERNAME, AIO_KEY);
 Adafruit_MQTT_Publish Temp = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/Temp", MQTT_QOS_1);
